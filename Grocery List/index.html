@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Grocery List</title>
+</head>
+<header>
+    <h1>Grocery List</h1>
+    <script src="/script.js"></script>
+</header>
+<main>
+    <h3>No groceries!</h3>
+
+      <!-- MAIN SECTION -->
+      <main>
+        <div class="container">
+            <!--  Input and "add" button  -->
+            <input class="submission-line__input" type="text" maxlength="20" placeholder="Enter new item here">
+            <button class="submission-line__btn">Add to List</button>
+            <!--  List, list items, and list item buttons  -->
+            <ul class="list">
+                <li class="list__item"><a class="list__delete-btn">X</a>Milk<a class="list__check-btn">✔</a></li>
+                <li class="list__item"><a class="list__delete-btn">X</a>Eggs<a class="list__check-btn">✔</a></li>
+                <li class="list__item list__item--checked"><a class="list__delete-btn list__delete-btn--checked">X</a>Bread<a class="list__check-btn list__check-btn--checked">✔</a></li>
+            </ul>
+        </div>
+</main>
+<ul></ul>
+</html>
