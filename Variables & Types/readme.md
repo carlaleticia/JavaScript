@@ -1,4 +1,4 @@
-[![Santander Bootcamp FullStack Developer](https://hermes.digitalinnovation.one/tracks/800fd098-3eef-45e9-9544-544ae396076c.png)](https://web.dio.me/track/santander-bootcamp-fullstack-developer)
+[![Santander Bootcamp FullStack Developer](https://hermes.digitalinnovation.one/tracks/800fd098-3eef-45e9-9544-544ae396076c.png?w=50?h=50)](https://web.dio.me/track/santander-bootcamp-fullstack-developer)
 
 # Variables & Types
 
