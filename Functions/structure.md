@@ -44,10 +44,10 @@ When JavaScript reaches a ==**return**== statement, the function will ==**stop**
 >##### Example
 > Calculate the product of two numbers, and return the result:
 >
->>let **x** = *myFunction*(4, 3);   ==//Function is called, return value will end up in x==
+>>let **x** = *myFunction*(4, 3);   //Function is called, return value will end up in x
 >
 >> **function** *myFunction*(a, b) **{**
-  **return** a * b;             ==//Function returns the product of a and b==
+  **return** a * b;             //Function returns the product of a and b
 **}**
 >
 > The result in **x** will be:
