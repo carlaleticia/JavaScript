@@ -1,74 +1,68 @@
-$(document).ready(function(){
+let count = 0;
+let message = document.querySelector("h3");
 
-  // ADDING A NEW ITEM TO THE LIST
-  
-    // Define the callback function
-    var addItem = function() {
-  
-      // Declare a variable to capture the input text value
-      var $input = $('.submission-line__input').val();
-      // If the input text field isn't empty, add it to the list as a new item
-      if ($input) {
-        $('.list').prepend('<li class="list__item"><a class="list__delete-btn">X</a>' + $input + '<a class="list__check-btn">✔</a></li>');
-      }
-      // Clear the input text field
-      $('.submission-line__input').val("");
-    };
-  
-    // Add a new item to the list by clicking "Add" button
-    $('.submission-line__btn').on('click', function(event){
-      // (prevents form submit button unwanted default action)
-      event.preventDefault();
-      // run the callback function
-      addItem();
-    });
-  
-    // Add a new item to the list by hitting "Enter"
-    $('.submission-line__input').keypress(function(event){
-      if (event.which === 13) {
-        // run the callback function
-        addItem();
-      }
-    });
-  
-  // DELETING AN ITEM FROM THE LIST
-  
-    // Clicking an item's delete button:
-    $('.list').on('click', '.list__delete-btn', function(){
-      // removes that item from the list
-      $(this).parent().fadeOut(300, function(){
-        $(this).remove();
-      });
-    });
-  
-  // CHECKING AN ITEM OFF FROM THE LIST
-  
-    // Clicking an item's check button:
-    $('.list').on('click', '.list__check-btn', function(event){
-      // grays everything out
-      $(this).parent().toggleClass('list__item--checked');
-      $(this).siblings().toggleClass('list__delete-btn--checked');
-      $(this).toggleClass('list__check-btn--checked');
-  
-      // moves the element to either the bottom or top of the list
-      var $listItem = $(this).parent();
-      if ($listItem.hasClass('list__item--checked')) {
-        $('.list').append($listItem);
-      } else {
-        $('.list').prepend($listItem);
-      }
-    });
-  
-  // MAKING LIST ITEMS SORTABLE
-  
-    $('.list').sortable({
-        distance: 2,
-        revert: 300,
-        cancel: ".list__item--checked"
-    });
-  
-  });
-  
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  let li = document.createElement("li");
+  let inputValue = document.getElementById("myInput").value;
+  let t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUl").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  count = count + 1;
+  changeMessage();
+}
+
+// Create a "close" button and append it to each list item
+let deleteItem = document.getElementsByTagName("li");
+let ix;
+for (ix = 0; ix < deleteItem.length; ix++) {
+  let span = document.createElement("SPAN");
+  let txt = document.createTextNode("\u00D7"); // x symbol
+  span.className = "close";
+  span.appendChild(txt);
+  deleteItem[ix].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+let close = document.getElementsByClassName("close");
+let i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    let div = this.parentElement;
+    div.style.display = "none";
+    value = count - 1;
+    changeMessage();
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+let list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'li') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+///Change tittle
 
 function changeMessage() {
   if (count >= 3) {
