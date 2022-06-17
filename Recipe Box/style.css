@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+p,
+li {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  background-color: #e8e8e4;
+  margin: 20px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+hr {
+  height: 1px;
+  background-color: #e8e8e4;
+  border: none;
+}
+/* Start here */
+header {
+  height: 85px;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  height: 75px;
+  background-color: #ade8f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+nav {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meal-container {
+  background-color: #ece4db;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-cards-container {
+  width: 900px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  width: 280px;
+  height: 520px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 0 lightseagreen;
+}
+
+.recipe-info {
+  height: 130px;
+  display: flex;
+}
+
+.recipe-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredients-list-container {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1 solid #e8e8e4;
+}
+
+.list {
+  margin-left: 25px;
+}
+
+footer {
+  background-color: lightseagreen;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-link {
+  border-bottom: 3px;
+}
