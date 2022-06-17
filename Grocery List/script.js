@@ -1,5 +1,3 @@
-let count = 0;
-let message = document.querySelector("h3");
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
@@ -7,71 +5,70 @@ function newElement() {
   let inputValue = document.getElementById("myInput").value;
   let t = document.createTextNode(inputValue);
   li.appendChild(t);
-  if (inputValue === '') {
+  if (inputValue === "") {
     alert("You must write something!");
   } else {
     document.getElementById("myUl").appendChild(li);
+    count++;
+    changeMessage();
   }
   document.getElementById("myInput").value = "";
 
-  let span = document.createElement("SPAN");
+  let span = document.createElement("span");
   let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-
-  count = count + 1;
-  changeMessage();
+ 
 }
 
 // Create a "close" button and append it to each list item
-let deleteItem = document.getElementsByTagName("li");
-let ix;
-for (ix = 0; ix < deleteItem.length; ix++) {
-  let span = document.createElement("SPAN");
+let myNodeList = document.getElementsByTagName("li");
+for (let x = 0; x < myNodeList.length; x++) {
+  let span = document.createElement("span");
   let txt = document.createTextNode("\u00D7"); // x symbol
   span.className = "close";
   span.appendChild(txt);
-  deleteItem[ix].appendChild(span);
+  myNodeList[x].appendChild(span);
 }
 
 // Click on a close button to hide the current list item
 let close = document.getElementsByClassName("close");
-let i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
+for (let i = 0; i < close.length; i++) {
+  close[i].onclick = function () {
     let div = this.parentElement;
-    div.style.display = "none";
-    value = count - 1;
+    div.remove();
+    count--;
     changeMessage();
-  }
+  };
 }
 
-// Add a "checked" symbol when clicking on a list item
-let list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'li') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+// "checked" when clicking on a list item
+let list = document.querySelector("ul");
+
+const listItems = list.childNodes;
+
+listItems.forEach((li) => {
+  li.onclick = function () {
+    li.classList.toggle("checked");
+  };
+});
+
 
 ///Change tittle
-
+let count = 0;
+let message = document.querySelector("h3");
 function changeMessage() {
-  if (count >= 3) {
-    message.textContent = "That's a big trip";
-  } else if (count === 2) {
-    message.textContent = "That's a medium size trip";
-  } else if (count === 1) {
-    message.textContent = "That's a small trip";
-  } else {
+  if (count > 5) {
+    message.textContent = "That's a big trip!";
+  } else if (count <= 5 && count > 2) {
+    message.textContent = "That's a medium size trip!";
+  } else if (count <= 2 && count > 0) {
+    message.textContent = "That's a small trip!";
+  } else if (count = 0) {
     message.textContent = "No groceries!";
+  } else {
+    message.textContent = "Grocery List"
   }
 }
